@@ -13,7 +13,16 @@ const server = http.createServer((req, res) => {
   }
 
   if(req.url === '/message' && req.method === 'POST'){
-      fs.writeFileSync('msg.txt', 'DUMMY');
+      const body = [];
+      req.on('data', (chunk) => {
+          body.push(chunk); //Chunk is unreadable data in int form 
+      });
+
+      req.on('end', () => {
+          const parsedBody = Buffer.concat(body).toString(); //chunk is readable 
+          const message = parsedBody.split('=')[1];
+          fs.writeFileSync('msg.txt', message);
+      });
       res.statusCode = 302;
       res.setHeader('location', '/');
       return res.end();
