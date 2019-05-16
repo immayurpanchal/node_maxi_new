@@ -4,13 +4,15 @@ const express = require('express');
 // eslint-disable-next-line new-cap
 router = express.Router();
 
+//* /admin/add-prodct => GET
 router.get('/add-product', (req, res, next) => {
   res.write(
-      `<div><form action="/product" method="POST"><input type="text" name="title"/><button type="submit">Submit</button></form></div>`
+      `<div><form action="/admin/product" method="POST"><input type="text" name="title"/><button type="submit">Submit</button></form></div>`
   );
 });
 
-router.post('/product', (req, res, next) => {
+//* /admin/add-prodct => POST
+router.post('/add-product', (req, res, next) => {
   console.log(req.body);
   res.redirect('/');
 });

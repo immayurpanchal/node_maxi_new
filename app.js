@@ -10,7 +10,7 @@ const app = express();
 //* order matters in defining the path
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(adminRoutes);
+app.use('/admin', adminRoutes);
 
 app.use(shopRoutes);
 
