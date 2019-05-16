@@ -1,0 +1,25 @@
+{
+  "name": "node_maxi_new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/immayurpanchal/node_maxi_new.git"
+  },
+  "author": "Mayur Panchal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/immayurpanchal/node_maxi_new/issues"
+  },
+  "homepage": "https://github.com/immayurpanchal/node_maxi_new#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "nodemon": "^1.19.0"
+  }
+}
