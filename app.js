@@ -11,6 +11,8 @@ const app = express();
 
 //* order matters in defining the path
 app.use(bodyParser.urlencoded({extended: false}));
+
+//* used to serve static content (css)
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', adminRoutes);
