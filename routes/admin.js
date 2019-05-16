@@ -1,14 +1,13 @@
 /* eslint-disable max-len */
 const express = require('express');
+const path = require('path');
 
 // eslint-disable-next-line new-cap
 router = express.Router();
 
 //* /admin/add-prodct => GET
 router.get('/add-product', (req, res, next) => {
-  res.write(
-      `<div><form action="/admin/product" method="POST"><input type="text" name="title"/><button type="submit">Submit</button></form></div>`
-  );
+  res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
 });
 
 //* /admin/add-prodct => POST
