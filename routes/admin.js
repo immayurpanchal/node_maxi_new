@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 const express = require('express');
-const path = require('path');
 
 const products = [];
 
@@ -9,7 +8,7 @@ router = express.Router();
 
 //* /admin/add-prodct => GET
 router.get('/add-product', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
+  res.render('add-product', {pageTitle: 'add-product'});
 });
 
 //* /admin/add-prodct => POST

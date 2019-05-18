@@ -1,13 +1,11 @@
 const express = require('express');
-const path = require('path');
 const adminData = require('./admin');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  console.log(adminData.products);
-  res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
+  res.render('shop', {pageTitle: 'Shop', products: adminData.products});
 });
 
 module.exports = router;
